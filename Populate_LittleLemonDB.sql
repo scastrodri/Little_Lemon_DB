@@ -1,6 +1,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
-LOAD DATA LOCAL INFILE 'C:/Users/Sergio/Documents/Coursera/Professional_Certificate/Meta Database Engineer/8-Database_Engineer_Capstone/Customers.csv'
+LOAD DATA LOCAL INFILE '../Customers.csv'
 INTO TABLE customers
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -8,7 +8,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (CustomerID, CustomerName, Country, CountryCode, City, PostalCode);
 
-LOAD DATA LOCAL INFILE 'C:/Users/Sergio/Documents/Coursera/Professional_Certificate/Meta Database Engineer/8-Database_Engineer_Capstone/Menus.csv'
+LOAD DATA LOCAL INFILE '../Menus.csv'
 INTO TABLE menus
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -16,7 +16,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (CourseName, CuisineName, StarterName, DesertName, Drink, Sides);
 
-LOAD DATA LOCAL INFILE 'C:/Users/Sergio/Documents/Coursera/Professional_Certificate/Meta Database Engineer/8-Database_Engineer_Capstone/Bookings.csv'
+LOAD DATA LOCAL INFILE '../Bookings.csv'
 INTO TABLE bookings
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -25,7 +25,7 @@ IGNORE 1 ROWS
 (CustomerID, @BookingDate, @TableNumber)
 SET BookingDate = STR_TO_DATE(@BookingDate, '%d/%m/%Y'), TableNumber = CAST(@TableNumber AS UNSIGNED);
 
-LOAD DATA LOCAL INFILE 'C:/Users/Sergio/Documents/Coursera/Professional_Certificate/Meta Database Engineer/8-Database_Engineer_Capstone/Staff.csv'
+LOAD DATA LOCAL INFILE '../Staff.csv'
 INTO TABLE Staff
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -34,7 +34,7 @@ IGNORE 1 ROWS
 (StaffName, Role, @Salary)
 SET Salary = CAST(@Salary AS DECIMAL(6,2));
 
-LOAD DATA LOCAL INFILE 'C:/Users/Sergio/Documents/Coursera/Professional_Certificate/Meta Database Engineer/8-Database_Engineer_Capstone/DeliveryStatus.csv'
+LOAD DATA LOCAL INFILE '../DeliveryStatus.csv'
 INTO TABLE DeliveryStatus
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
